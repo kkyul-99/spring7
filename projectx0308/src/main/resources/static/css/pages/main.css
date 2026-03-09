@@ -1,0 +1,66 @@
+/* main.jsp page-only tweaks (theme.css is global) */
+
+.text-gradient-primary {
+background: linear-gradient(135deg, rgb(233,176,196), rgb(186,198,220));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+/* Improve readability on bright hero */
+filter: drop-shadow(0 10px 22px rgba(0,0,0,0.35)) drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+}
+
+.text-gradient-subtle {
+background: linear-gradient(90deg, rgba(255,255,255,0.92), rgba(255,255,255,0.72));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.trainee-card {
+position: relative;
+transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+overflow: hidden;
+border: 1px solid rgba(44, 44, 44, 0.12);
+}
+
+.trainee-card:hover {
+transform: translateY(-6px);
+box-shadow: 0 18px 46px rgba(0, 0, 0, 0.14);
+border-color: rgba(44, 44, 44, 0.22);
+}
+
+.trainee-card::before {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(135deg, rgba(233,176,196,0.10), rgba(186,198,220,0.10));
+opacity: 0;
+transition: opacity 220ms ease;
+}
+
+.trainee-card:hover::before {
+opacity: 1;
+}
+
+.img-overlay {
+background: linear-gradient(to bottom, rgba(0,0,0,0.00) 35%, rgba(0,0,0,0.72) 100%);
+}
+
+.card-selected {
+border: 2px solid rgba(233, 176, 196, 0.95) !important;
+box-shadow: 0 0 0 4px rgba(233,176,196,0.22), 0 18px 46px rgba(0,0,0,0.14) !important;
+}
+
+.bottom-bar {
+background: linear-gradient(135deg, rgba(255,255,255,0.40), rgba(255,255,255,0.26));
+backdrop-filter: blur(18px);
+border-top: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.hero-overlay {
+/* Keep readable contrast on top of the pastel hero image */
+background:
+linear-gradient(180deg, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.10) 55%, rgba(0,0,0,0.22) 100%),
+radial-gradient(circle at 22% 28%, rgba(233,176,196,0.18), transparent 60%),
+radial-gradient(circle at 78% 72%, rgba(186,198,220,0.14), transparent 62%);
+}

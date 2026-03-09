@@ -1,0 +1,56 @@
+plugins {
+    id 'java'
+    id 'war'
+    id 'org.springframework.boot' version '4.0.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.java'
+version = '0.0.1-SNAPSHOT'
+description = '스프링프로젝트'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.security:spring-security-crypto'
+
+    // JSP - providedRuntime 으로 변경해야 내장톰캣이 JSP 처리 가능
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api'
+    runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl'
+
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    implementation 'commons-io:commons-io:2.20.0'
+
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.compilerArgs += ['-parameters']
+}

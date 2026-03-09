@@ -1,0 +1,120 @@
+2026-03-09 11:29:57.549131+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD" already exists; SQL statement:
+create global temporary table HTE_board(image boolean, rn_ integer not null, createdAt timestamp(6), id bigint, likeCount bigint, viewCount bigint, boardType varchar(20), authorNick varchar(60), title varchar(200), content CLOB, originalFilename varchar(255), storedFilename varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:29:57.553120+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_COMMENT" already exists; SQL statement:
+create global temporary table HTE_board_comment(rn_ integer not null, authorMno bigint, board_id bigint, createdAt timestamp(6), id bigint, authorNick varchar(60), content CLOB, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:29:57.554116+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN_MEMBER" already exists; SQL statement:
+create global temporary table HTE_game_run_member(pickOrder integer, rn_ integer not null, createdAt timestamp(6), id bigint, run_runId bigint, trainee_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:29:57.554116+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_CHOICE" already exists; SQL statement:
+create global temporary table HTE_game_choice(rn_ integer not null, sortOrder integer, id bigint, choiceKey varchar(10), statTarget varchar(20), phase varchar(30), choiceText varchar(200), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:29:57.555114+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_TRAINEE" already exists; SQL statement:
+create global temporary table HTE_trainee(age integer, dance integer, height integer, mental integer, rn_ integer not null, star integer, teamwork integer, vocal integer, weight integer, id bigint, hobby varchar(255), imagePath varchar(255), instagram varchar(255), motto varchar(255), name varchar(255), gender enum ('FEMALE','MALE'), grade enum ('A','B','C','S'), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:29:57.555114+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_LIKE" already exists; SQL statement:
+create global temporary table HTE_board_like(rn_ integer not null, boardId bigint, id bigint, mno bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:29:57.556111+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN" already exists; SQL statement:
+create global temporary table HTE_game_run(confirmed boolean, rn_ integer not null, createdAt timestamp(6), playerMno bigint, runId bigint, groupType varchar(20), phase varchar(30), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:29:57.556111+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_MEMBER" already exists; SQL statement:
+create global temporary table HTE_member(rn_ integer not null, createdAt timestamp(6), mno bigint, jumin varchar(20), phone varchar(30), mid varchar(50), mname varchar(50), nickname varchar(50), mpw varchar(100), email varchar(120), address varchar(255), addressDetail varchar(255), profileImage varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:31:03.653853+09:00 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD" already exists; SQL statement:
+create global temporary table HTE_board(image boolean, rn_ integer not null, createdAt timestamp(6), id bigint, likeCount bigint, viewCount bigint, boardType varchar(20), authorNick varchar(60), title varchar(200), content CLOB, originalFilename varchar(255), storedFilename varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:31:03.654850+09:00 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_COMMENT" already exists; SQL statement:
+create global temporary table HTE_board_comment(rn_ integer not null, authorMno bigint, board_id bigint, createdAt timestamp(6), id bigint, authorNick varchar(60), content CLOB, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:31:03.654850+09:00 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN_MEMBER" already exists; SQL statement:
+create global temporary table HTE_game_run_member(pickOrder integer, rn_ integer not null, createdAt timestamp(6), id bigint, run_runId bigint, trainee_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:31:03.655848+09:00 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_CHOICE" already exists; SQL statement:
+create global temporary table HTE_game_choice(rn_ integer not null, sortOrder integer, id bigint, choiceKey varchar(10), statTarget varchar(20), phase varchar(30), choiceText varchar(200), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:31:03.655848+09:00 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_TRAINEE" already exists; SQL statement:
+create global temporary table HTE_trainee(age integer, dance integer, height integer, mental integer, rn_ integer not null, star integer, teamwork integer, vocal integer, weight integer, id bigint, hobby varchar(255), imagePath varchar(255), instagram varchar(255), motto varchar(255), name varchar(255), gender enum ('FEMALE','MALE'), grade enum ('A','B','C','S'), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:31:03.656845+09:00 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_LIKE" already exists; SQL statement:
+create global temporary table HTE_board_like(rn_ integer not null, boardId bigint, id bigint, mno bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:31:03.656845+09:00 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN" already exists; SQL statement:
+create global temporary table HTE_game_run(confirmed boolean, rn_ integer not null, createdAt timestamp(6), playerMno bigint, runId bigint, groupType varchar(20), phase varchar(30), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:31:03.656845+09:00 jdbc[19]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_MEMBER" already exists; SQL statement:
+create global temporary table HTE_member(rn_ integer not null, createdAt timestamp(6), mno bigint, jumin varchar(20), phone varchar(30), mid varchar(50), mname varchar(50), nickname varchar(50), mpw varchar(100), email varchar(120), address varchar(255), addressDetail varchar(255), profileImage varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:41:52.708128+09:00 jdbc[29]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD" already exists; SQL statement:
+create global temporary table HTE_board(image boolean, rn_ integer not null, createdAt timestamp(6), id bigint, likeCount bigint, viewCount bigint, boardType varchar(20), authorNick varchar(60), title varchar(200), content CLOB, originalFilename varchar(255), storedFilename varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:41:52.709126+09:00 jdbc[29]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_COMMENT" already exists; SQL statement:
+create global temporary table HTE_board_comment(rn_ integer not null, authorMno bigint, board_id bigint, createdAt timestamp(6), id bigint, authorNick varchar(60), content CLOB, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:41:52.709126+09:00 jdbc[29]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN_MEMBER" already exists; SQL statement:
+create global temporary table HTE_game_run_member(pickOrder integer, rn_ integer not null, createdAt timestamp(6), id bigint, run_runId bigint, trainee_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:41:52.710123+09:00 jdbc[29]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_CHOICE" already exists; SQL statement:
+create global temporary table HTE_game_choice(rn_ integer not null, sortOrder integer, id bigint, choiceKey varchar(10), statTarget varchar(20), phase varchar(30), choiceText varchar(200), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:41:52.710123+09:00 jdbc[29]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_TRAINEE" already exists; SQL statement:
+create global temporary table HTE_trainee(age integer, dance integer, height integer, mental integer, rn_ integer not null, star integer, teamwork integer, vocal integer, weight integer, id bigint, hobby varchar(255), imagePath varchar(255), instagram varchar(255), motto varchar(255), name varchar(255), gender enum ('FEMALE','MALE'), grade enum ('A','B','C','S'), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:41:52.710123+09:00 jdbc[29]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_LIKE" already exists; SQL statement:
+create global temporary table HTE_board_like(rn_ integer not null, boardId bigint, id bigint, mno bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:41:52.711121+09:00 jdbc[29]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN" already exists; SQL statement:
+create global temporary table HTE_game_run(confirmed boolean, rn_ integer not null, createdAt timestamp(6), playerMno bigint, runId bigint, groupType varchar(20), phase varchar(30), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:41:52.711121+09:00 jdbc[29]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_MEMBER" already exists; SQL statement:
+create global temporary table HTE_member(rn_ integer not null, createdAt timestamp(6), mno bigint, jumin varchar(20), phone varchar(30), mid varchar(50), mname varchar(50), nickname varchar(50), mpw varchar(100), email varchar(120), address varchar(255), addressDetail varchar(255), profileImage varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:42:06.176187+09:00 jdbc[39]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD" already exists; SQL statement:
+create global temporary table HTE_board(image boolean, rn_ integer not null, createdAt timestamp(6), id bigint, likeCount bigint, viewCount bigint, boardType varchar(20), authorNick varchar(60), title varchar(200), content CLOB, originalFilename varchar(255), storedFilename varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:42:06.176187+09:00 jdbc[39]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_COMMENT" already exists; SQL statement:
+create global temporary table HTE_board_comment(rn_ integer not null, authorMno bigint, board_id bigint, createdAt timestamp(6), id bigint, authorNick varchar(60), content CLOB, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:42:06.177186+09:00 jdbc[39]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN_MEMBER" already exists; SQL statement:
+create global temporary table HTE_game_run_member(pickOrder integer, rn_ integer not null, createdAt timestamp(6), id bigint, run_runId bigint, trainee_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:42:06.177186+09:00 jdbc[39]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_CHOICE" already exists; SQL statement:
+create global temporary table HTE_game_choice(rn_ integer not null, sortOrder integer, id bigint, choiceKey varchar(10), statTarget varchar(20), phase varchar(30), choiceText varchar(200), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:42:06.178183+09:00 jdbc[39]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_TRAINEE" already exists; SQL statement:
+create global temporary table HTE_trainee(age integer, dance integer, height integer, mental integer, rn_ integer not null, star integer, teamwork integer, vocal integer, weight integer, id bigint, hobby varchar(255), imagePath varchar(255), instagram varchar(255), motto varchar(255), name varchar(255), gender enum ('FEMALE','MALE'), grade enum ('A','B','C','S'), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:42:06.178183+09:00 jdbc[39]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_LIKE" already exists; SQL statement:
+create global temporary table HTE_board_like(rn_ integer not null, boardId bigint, id bigint, mno bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 11:42:06.179180+09:00 jdbc[39]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN" already exists; SQL statement:
+create global temporary table HTE_game_run(confirmed boolean, rn_ integer not null, createdAt timestamp(6), playerMno bigint, runId bigint, groupType varchar(20), phase varchar(30), primary key (rn_)) transactional [42101-240]
+2026-03-09 11:42:06.179180+09:00 jdbc[39]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_MEMBER" already exists; SQL statement:
+create global temporary table HTE_member(rn_ integer not null, createdAt timestamp(6), mno bigint, jumin varchar(20), phone varchar(30), mid varchar(50), mname varchar(50), nickname varchar(50), mpw varchar(100), email varchar(120), address varchar(255), addressDetail varchar(255), profileImage varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-09 15:12:56.021748+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD" already exists; SQL statement:
+create global temporary table HTE_board(image boolean, rn_ integer not null, createdAt timestamp(6), id bigint, likeCount bigint, viewCount bigint, boardType varchar(20), authorNick varchar(60), title varchar(200), content CLOB, originalFilename varchar(255), storedFilename varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-09 15:12:56.025739+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_COMMENT" already exists; SQL statement:
+create global temporary table HTE_board_comment(rn_ integer not null, authorMno bigint, board_id bigint, createdAt timestamp(6), id bigint, authorNick varchar(60), content CLOB, primary key (rn_)) transactional [42101-240]
+2026-03-09 15:12:56.025739+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN_MEMBER" already exists; SQL statement:
+create global temporary table HTE_game_run_member(pickOrder integer, rn_ integer not null, createdAt timestamp(6), id bigint, run_runId bigint, trainee_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 15:12:56.026735+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_CHOICE" already exists; SQL statement:
+create global temporary table HTE_game_choice(rn_ integer not null, sortOrder integer, id bigint, choiceKey varchar(10), statTarget varchar(20), phase varchar(30), choiceText varchar(200), primary key (rn_)) transactional [42101-240]
+2026-03-09 15:12:56.026735+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_TRAINEE" already exists; SQL statement:
+create global temporary table HTE_trainee(age integer, dance integer, height integer, mental integer, rn_ integer not null, star integer, teamwork integer, vocal integer, weight integer, id bigint, hobby varchar(255), imagePath varchar(255), instagram varchar(255), motto varchar(255), name varchar(255), gender enum ('FEMALE','MALE'), grade enum ('A','B','C','S'), primary key (rn_)) transactional [42101-240]
+2026-03-09 15:12:56.027733+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOARD_LIKE" already exists; SQL statement:
+create global temporary table HTE_board_like(rn_ integer not null, boardId bigint, id bigint, mno bigint, primary key (rn_)) transactional [42101-240]
+2026-03-09 15:12:56.027733+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_GAME_RUN" already exists; SQL statement:
+create global temporary table HTE_game_run(confirmed boolean, rn_ integer not null, createdAt timestamp(6), playerMno bigint, runId bigint, groupType varchar(20), phase varchar(30), primary key (rn_)) transactional [42101-240]
+2026-03-09 15:12:56.028729+09:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_MEMBER" already exists; SQL statement:
+create global temporary table HTE_member(rn_ integer not null, createdAt timestamp(6), mno bigint, jumin varchar(20), phone varchar(30), mid varchar(50), mname varchar(50), nickname varchar(50), mpw varchar(100), email varchar(120), address varchar(255), addressDetail varchar(255), profileImage varchar(255), primary key (rn_)) transactional [42101-240]

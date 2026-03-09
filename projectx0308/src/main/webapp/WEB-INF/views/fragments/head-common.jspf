@@ -1,0 +1,72 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/variable/pretendardvariable.css">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+
+<!-- Tailwind (JSP markup utility classes) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- App styles -->
+<link rel="stylesheet" href="<c:url value='/css/theme.css'/>" />
+<link rel="stylesheet" href="<c:url value='/css/style.css'/>" />
+
+<style>
+/* ── 전역 AJAX 에러/성공 토스트 ── */
+.global-toast {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(20px);
+    z-index: 99999; min-width: 240px; max-width: 420px;
+    padding: 13px 20px; border-radius: 14px;
+    font-size: 13px; font-weight: 600; text-align: center;
+    pointer-events: none; opacity: 0;
+    transition: opacity 300ms ease, transform 300ms cubic-bezier(.23,1.2,.46,.98);
+    backdrop-filter: blur(20px);
+}
+.global-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+.global-toast.err { background:rgba(248,113,113,0.18); border:1px solid rgba(248,113,113,0.40); color:rgba(248,113,113,1); box-shadow:0 8px 32px rgba(248,113,113,0.15); }
+.global-toast.ok  { background:rgba(134,239,172,0.15); border:1px solid rgba(134,239,172,0.35); color:rgba(134,239,172,1); box-shadow:0 8px 32px rgba(134,239,172,0.12); }
+.global-toast.info{ background:rgba(186,198,220,0.15); border:1px solid rgba(186,198,220,0.35); color:rgba(186,198,220,1); box-shadow:0 8px 32px rgba(186,198,220,0.12); }
+</style>
+
+<script>
+/* ── 전역 토스트 함수 (어느 페이지에서도 사용 가능) ── */
+window.showToast = function(msg, type) {
+    var old = document.getElementById('__global_toast');
+    if (old) old.remove();
+    var el = document.createElement('div');
+    el.id = '__global_toast';
+    el.className = 'global-toast ' + (type || 'info');
+    el.innerHTML = (type==='err' ? '<i class="fas fa-exclamation-circle"></i> ' :
+                    type==='ok'  ? '<i class="fas fa-check-circle"></i> ' :
+                                   '<i class="fas fa-info-circle"></i> ') + msg;
+    document.body.appendChild(el);
+    requestAnimationFrame(function(){ el.classList.add('show'); });
+    setTimeout(function(){ el.classList.remove('show'); }, 2800);
+    setTimeout(function(){ el.remove(); }, 3200);
+};
+
+/* ── fetch 래퍼 (에러 자동 처리) ── */
+window.safeFetch = function(url, options) {
+    return fetch(url, options).then(function(res) {
+        if (res.status === 401) {
+            showToast('로그인이 필요합니다.', 'err');
+            setTimeout(function(){ window.location.href = '/login'; }, 1200);
+            throw new Error('unauthorized');
+        }
+        if (!res.ok) {
+            return res.json().catch(function(){ throw new Error('서버 오류 ('+res.status+')'); })
+                .then(function(d){ throw new Error(d.error || '오류가 발생했습니다.'); });
+        }
+        return res;
+    }).catch(function(err) {
+        if (err.message !== 'unauthorized') showToast(err.message || '네트워크 오류가 발생했습니다.', 'err');
+        throw err;
+    });
+};
+</script>
